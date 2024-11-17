@@ -7,6 +7,7 @@ using Villa.Dto.FeatureDtos;
 using Villa.Dto.MessageDtos;
 using Villa.Dto.ProductDtos;
 using Villa.Dto.QuestDtos;
+using Villa.Dto.SubHeaderDtos;
 using Villa.Dto.VideoDtos;
 using Villa.EntityLayer.Entities;
 
@@ -58,6 +59,11 @@ namespace MongoDb_Villa_Project.Mapping
             CreateMap<ResultVideoDto, Video>().ReverseMap();
             CreateMap<UpdateVideoDto, Video>().ReverseMap();
             CreateMap<CreateVideoDto, Video>().ReverseMap();
+
+
+            CreateMap<ResultSubHeaderDto, SubHeader>().ReverseMap();
+            CreateMap<UpdateSubHeaderDto, SubHeader>().ReverseMap();
+            CreateMap<CreateSubHeaderDto, SubHeader>().ReverseMap();
         }
     }
 }
