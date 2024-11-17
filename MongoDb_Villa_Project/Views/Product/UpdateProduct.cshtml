@@ -1,0 +1,47 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post"> 
+    <input  type="hidden" asp-for="Id"/>
+    <label>ResimUrl</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Kategori</label>
+    <input type="text" asp-for="Category" class="form-control" />
+    <br />
+    <label>Price</label>
+    <select type="text" asp-for="Price" class="form-control" />
+    <option>Kategori Seçiniz</option>
+    <option value="Modern">Modern</option>
+    <option value="Çatı Katı">Çatı Katı</option>
+    <option value="Lüks">Lüks</option>
+    <option value="Ahşap">Ahşap</option>
+    <br />
+    <label>Oda Sayısı</label>
+    <input type="text" asp-for="BedroomCount" class="form-control" />
+    <br />
+    <label>Banyo Sayısı</label>
+    <input type="text" asp-for="BathroomCount" class="form-control" />
+    <br />
+    <label>Metre Kare</label>
+    <input type="text" asp-for="Area" class="form-control" />
+    <br />
+    <label>Kat Sayısı</label>
+    <input type="text" asp-for="Floor" class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Park Alanı</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <button class="btn btn-outline-danger">Kaydet</button>
+</form>
+

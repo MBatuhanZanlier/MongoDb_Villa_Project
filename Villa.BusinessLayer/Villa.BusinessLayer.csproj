@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Villa.DataAccessLayer\Villa.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Villa.Dto\Villa.Dto.csproj" />
+    <ProjectReference Include="..\Villa.EntityLayer\Villa.EntityLayer.csproj" />
+  </ItemGroup>
+
+</Project>

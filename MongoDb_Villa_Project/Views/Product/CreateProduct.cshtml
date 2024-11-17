@@ -1,0 +1,45 @@
+﻿@model CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>ResimUrl</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Fiyatı</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>Kategori</label>
+    <select asp-for="Category" class="form-control" />
+    <option>Kategori Seçiniz</option>
+    <option value="Modern">Modern</option>
+    <option value="Çatı Katı">Çatı Katı</option>
+    <option value="Lüks">Lüks</option>
+    </select>
+    <br />
+    <label>Oda Sayısı</label>
+    <input type="text" asp-for="BedroomCount" class="form-control" />
+    <br />
+    <label>Banyo Sayısı</label>
+    <input type="text" asp-for="BathroomCount" class="form-control" />
+    <br />
+    <label>Metre Kare</label>
+    <input type="text" asp-for="Area" class="form-control" />
+    <br />
+    <label>Kat Sayısı</label>
+    <input type="text" asp-for="Floor" class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Park Alanı</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <button class="btn btn-outline-danger">Kaydet</button>
+</form>
+

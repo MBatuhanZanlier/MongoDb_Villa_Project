@@ -1,0 +1,46 @@
+﻿@model ResultProductDto
+@{
+    ViewData["Title"] = "ProductDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Resim URL</th>
+        <td><img src="@Model.ImageUrl" style="height:200px;width:200px" /></td>
+    </tr>
+    <tr>
+        <th>İlan Başlığı:</th>
+        <td>@Model.Title</td>
+    </tr>
+    <tr>
+        <th>Kategorisi:</th>
+        <td>@Model.Category</td>
+    </tr>
+    <tr>
+        <th>Fiyatı:</th>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <th>Oda Sayısı:</th>
+        <td>@Model.BedroomCount</td>
+    </tr>
+    <tr>
+        <th>Banyo Sayısı:</th>
+        <td>@Model.BathroomCount</td>
+    </tr>
+    <tr>
+        <th>Metra kare:</th>
+        <td>@Model.Area</td>
+    </tr>
+    <tr>
+        <th>Kaç katlı:</th>
+        <td>@Model.Floor</td>
+    </tr>
+    <tr>
+        <th>Park Alan Sayısı:</th>
+        <td>@Model.ParkingCount</td>
+    </tr>
+</table>
+<a asp-controller="Product" asp-action="Index" class="btn btn-dark">Mesajlara Geri Dön</a>
+
