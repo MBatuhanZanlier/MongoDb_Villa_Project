@@ -1,0 +1,133 @@
+﻿@model LoginDto
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2f36; /* Koyu gri arka plan */
+            color: #fff; /* Beyaz metin */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #444; /* Koyu gri container arka plan */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #fff; /* Başlık rengi beyaz */
+            font-weight: bold; /* Koyu başlık */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #ccc; /* Açık gri etiket rengi */
+            margin-bottom: 5px;
+            font-weight: bold; /* Koyu etiketler */
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #666; /* Koyu kenarlık */
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff; /* Beyaz metin rengi */
+            background-color: #333; /* Koyu gri input arka plan */
+        }
+
+            input[type="text"]:focus, input[type="password"]:focus {
+                border-color: #4CAF50; /* Yeşil kenarlık odaklanınca */
+                outline: none; /* Odak dışındaki mavi çizgiyi kaldırır */
+            }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50; /* Yeşil buton */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold; /* Koyu buton yazısı */
+        }
+
+            .submit-btn:hover {
+                background-color: #45a049; /* Buton üzerine gelince renk değişir */
+            }
+
+        .register-redirect {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ccc; /* Açık gri metin rengi */
+            font-weight: bold; /* Koyu metin */
+        }
+
+            .register-redirect a {
+                color: #4CAF50; /* Kayıt ol linki yeşil olur */
+                text-decoration: none;
+                font-weight: bold; /* Koyu link */
+            }
+
+                .register-redirect a:hover {
+                    text-decoration: underline; /* Linkin üzerine gelince altı çizilir */
+                }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Giriş Yap</h2>
+        <form action="#" method="POST" class="login-form">
+            <div class="form-group">
+                <label for="userName">Kullanıcı Adı</label>
+                <input type="text" id="userName" name="UserName" required placeholder="Kullanıcı adınızı girin">
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="Password" required placeholder="Şifrenizi girin">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Giriş Yap</button>
+            </div>
+            <p class="register-redirect">Hesabınız yok mu? <a href="#">Kayıt Ol</a></p>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+
+

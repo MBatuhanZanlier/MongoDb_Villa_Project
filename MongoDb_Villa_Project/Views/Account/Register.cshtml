@@ -1,0 +1,136 @@
+﻿@model RegisterDto
+@{
+    Layout = null;
+}
+ 
+ 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #555;
+        }
+
+            input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+                border-color: #4CAF50;
+                outline: none;
+            }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .submit-btn:hover {
+                background-color: #45a049;
+            }
+
+        .login-redirect {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+            .login-redirect a {
+                color: #4CAF50;
+                text-decoration: none;
+            }
+
+                .login-redirect a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Kayıt Ol</h2>
+        <form action="Login" method="post" class="registration-form">
+            <div class="form-group">
+                <label for="nameSurname">Ad Soyad</label>
+                <input type="text" id="nameSurname" name="NameSurname" required placeholder="Adınızı ve Soyadınızı girin">
+            </div>
+            <div class="form-group">
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="Email" required placeholder="E-posta adresinizi girin">
+            </div>
+            <div class="form-group">
+                <label for="userName">Kullanıcı Adı</label>
+                <input type="text" id="userName" name="UserName" required placeholder="Kullanıcı adınızı girin">
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="Password" required placeholder="Şifrenizi girin">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Kayıt Ol</button>
+            </div>
+            <p class="login-redirect">Hesabınız var mı? <a href="#">Giriş Yap</a></p>
+        </form>
+    </div>
+
+</body>
+</html>
+

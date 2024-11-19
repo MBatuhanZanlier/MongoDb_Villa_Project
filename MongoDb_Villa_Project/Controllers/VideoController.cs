@@ -51,7 +51,7 @@ namespace MongoDb_Villa_Project.Controllers
             return View(getbyid);
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateVieo(UpdateVideoDto updateVideo)
+        public async Task<IActionResult> UpdateVideo(UpdateVideoDto updateVideo)
         {
 
             var updatemap = _mapper.Map<Video>(updateVideo);

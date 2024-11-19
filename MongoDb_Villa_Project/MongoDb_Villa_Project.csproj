@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\dashtreme-master\documentation\assets\.DS_Store" />
+    <None Include="wwwroot\dashtreme-master\documentation\assets\blueprint-css\plugins\.DS_Store" />
     <None Include="wwwroot\focus-2\.git\COMMIT_EDITMSG" />
     <None Include="wwwroot\focus-2\.git\config" />
     <None Include="wwwroot\focus-2\.git\description" />
@@ -4572,6 +4574,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
   </ItemGroup>
 

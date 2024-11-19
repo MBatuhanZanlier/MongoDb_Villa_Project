@@ -1,0 +1,80 @@
+﻿@model List<ResultDealDto>
+@{
+    int count = 0;
+    var active = "";
+    int contentcount = 0;
+    var contentActive = "";
+}
+
+
+<div class="section best-deal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-heading">
+                    <h6>| En iyi Tekliflerimiz</h6>
+                    <h2>En iyi teklifli Mülklerimiz!</h2>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="tabs-content">
+                    <div class="row">
+                        <div class="nav-wrapper">
+                            <ul class="nav nav-tabs" role="tablist">
+                                @foreach (var item in Model.DistinctBy(x => x.Type))
+                                {
+                                    count++;
+                                    active = (count == 1) ? "active" : "";
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link @active" id="@item.Type-tab" data-bs-toggle="tab" data-bs-target="#@item.Type" type="button" role="tab" aria-controls="@item.Type" aria-selected="true">@item.Type</button>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+
+                        <div class="tab-content" id="myTabContent">
+                            @foreach (var itemType in Model.DistinctBy(x => x.Type))
+                            {
+                                contentcount++;
+                                contentActive = (contentcount == 1) ? "active show" : "";
+
+                                <div class="tab-pane fade @contentActive" id="@itemType.Type" role="tabpanel" aria-labelledby="@itemType.Type-tab">
+                                    <div class="row">
+                                        @foreach (var item in Model.Where(x => x.Type == itemType.Type))
+                                        {
+                                            <div class="col-lg-3">
+                                                <div class="info-table">
+                                                    <ul>
+                                                        <li>Metrekare Bilgisi: <span>@item.Square</span></li>
+                                                        <li>Bulunduğu Kat <span>@item.Floor</span></li>
+                                                        <li>Oda Sayısı <span>@item.RoomCount</span></li>
+                                                        <li>Park Alanı <span>@(item.HasParkingAreA ? "Var" : "Yok")</span></li>
+                                                        <li>Ödeme Türü <span>@item.PaymentType</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <img src="@item.ImageUrl" alt="">
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h4>@item.Title</h4>
+                                                <p>
+                                                    @item.Description
+                                                    <br><br>
+                                                </p>
+                                                <div class="icon-button">
+                                                    <a href="property-details.html"><i class="fa fa-calendar"></i>Ziyaret Planlayın</a>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

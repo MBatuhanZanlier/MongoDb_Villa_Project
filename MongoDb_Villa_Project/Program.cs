@@ -4,6 +4,8 @@ using MongoDb_Villa_Project.Extensions;
 using System.Reflection;
 using Villa.DataAccessLayer.Context;
 using FluentValidation;
+using Villa.EntityLayer.Entities;
+using MongoDB.Bson;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.  
@@ -16,6 +18,7 @@ builder.Services.AddDbContext<VillaContext>(option =>
 {
     option.UseMongoDB(mongoDatabase.Client, mongoDatabase.DatabaseNamespace.DatabaseName);
 });
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<VillaContext>();
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 builder.Services.AddControllersWithViews();
 
