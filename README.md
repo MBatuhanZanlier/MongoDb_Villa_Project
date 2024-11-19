@@ -48,14 +48,12 @@ Performans	Yavaş okuma/yazma (daha büyük veri ile)	Daha hızlı okuma/yazma, 
 Veri Türü Esnekliği	Kısıtlı türler ve esneklik	Daha fazla esneklik ve veri türü desteği 
 
 ## - MongoDb .Net Core EntityFramework Orm ile kullanılması  
-Benimde bu projecede kullandığım .Net Core Entityframework ile geliştirmiş bulunmaktayım. Mongodbnin .netCore 7.0 altında sürümleri için bu kütüphane bulunmamaktadır o yüzden efcore un nimetlerinden yararlanmak  için projemi 7.0 ile projemi geliştirdim. 
+- Benimde bu projecede kullandığım .Net Core Entityframework ile geliştirmiş bulunmaktayım. Mongodbnin .netCore 7.0 altında sürümleri için bu kütüphane bulunmamaktadır o yüzden efcore un nimetlerinden yararlanmak  için projemi 7.0 ile projemi geliştirdim. 
 Yüklediğim MongoDb Kütüphaneleri; 
 1. MongoDB.Driver(2.22.0)
- -MongoDB ile etkileşim kurmak ve CRUD işlemlerini gerçekleştirmek için en temel kütüphanedir. Bu kütüphane, MongoDB veritabanlarıyla bağlantı kurmanıza, veri eklemenize, okumanıza, güncellemenize ve silmenize olanak tanır
+- MongoDB ile etkileşim kurmak ve CRUD işlemlerini gerçekleştirmek için en temel kütüphanedir. Bu kütüphane, MongoDB veritabanlarıyla bağlantı kurmanıza, veri eklemenize, okumanıza, güncellemenize ve silmenize olanak tanır
 2.MongoDB.Bson(2.22.0)
 - MongoDB.Bson, MongoDB’nin BSON (Binary JSON) formatını işleyebilmek için kullanılan kütüphanedir. BSON, MongoDB'nin veritabanında kullandığı veri formatıdır ve MongoDB.Driver bu kütüphaneye dayanır.
-
-
 3.MongoDB.EntityFrameworkCore(7.0) EfCore nimetlerinden faydalanmak için :)
 - ** Dip Not Önemli=  MongoDb.driver ve Mongodb.Bson kütüphanelerini eklerken last Version Install olarak eklemiştim o yüzden bu iki kütüphaneyi en son sürüm olarak indirmişti  o yüzden Viewsda çalıştırdığımda  hata olarak Unnable to Connect to web server 'https' the web server is no langer running hatasını verdi  sonra  program cs de hata aldım  hatanın çözümü ise MongoDb.Bson(2.22.0) MongoDb.Driver(2.22.0) olarak versiyonlarını güncelledim. **
 ## Projede Repository Desing Patern kullanıldı.
