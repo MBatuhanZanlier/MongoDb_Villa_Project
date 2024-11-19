@@ -55,7 +55,7 @@ MongoDB ile etkileşim kurmak ve CRUD işlemlerini gerçekleştirmek için en te
 2.MongoDB.Bson(2.22.0)
 MongoDB.Bson, MongoDB’nin BSON (Binary JSON) formatını işleyebilmek için kullanılan kütüphanedir. BSON, MongoDB'nin veritabanında kullandığı veri formatıdır ve MongoDB.Driver bu kütüphaneye dayanır.
 3.MongoDB.EntityFrameworkCore(7.0) EfCore nimetlerinden faydalanmak için :)
-Dip Not Önemli=  MongoDb.driver ve Mongodb.Bson kütüphanelerini eklerken last Version Install olarak eklemiştim o yüzden bu iki kütüphaneyi en son sürüm olarak indirmişti  o yüzden Viewsda çalıştırdığımda  hata olarak Unnable to Connect to web server 'https' the web server is no langer running hatasını verdi  sonra  program cs de hata aldım  hatanın çözümü ise MongoDb.Bson(2.22.0) MongoDb.Driver(2.22.0) olarak versiyonlarını güncelledim.
+** Dip Not Önemli=  MongoDb.driver ve Mongodb.Bson kütüphanelerini eklerken last Version Install olarak eklemiştim o yüzden bu iki kütüphaneyi en son sürüm olarak indirmişti  o yüzden Viewsda çalıştırdığımda  hata olarak Unnable to Connect to web server 'https' the web server is no langer running hatasını verdi  sonra  program cs de hata aldım  hatanın çözümü ise MongoDb.Bson(2.22.0) MongoDb.Driver(2.22.0) olarak versiyonlarını güncelledim. **
 Projede Repository Desing Patern kullanıldı.
 ## - Entity Katmanı (Class Libary)
 ObjectId, MongoDB'nin her bir doküman (document) için otomatik olarak atadığı benzersiz bir kimlik (ID) türüdür. MongoDB'nin varsayılan anahtar olarak kullandığı bu tür, her bir veri kaydının benzersiz bir şekilde tanımlanmasını sağlar. ObjectId, genellikle MongoDB veritabanlarında _id alanı olarak saklanır.
@@ -69,8 +69,8 @@ Context klasörü oluşturup içine VillaContext isimli sınıfımızı oluştur
 Entity katmanımızı DataAcsessLayer Katmanımıza Refans veriyoruz.
 DataAcsess Katmanımıza Manege Nuget Packages'dan MongoDb.EntityFrameWrokCore Kütüphanemizi indiriyoruz.
 ![Ekran Görüntüsü (234)](https://github.com/user-attachments/assets/a29dc54c-acc5-4295-b079-defd10e28281)
-(* Burada Dikkat Edilmesi gereken husus İnculude prealase kutucu işaretli olacak yoksa 7.0 sürümü gelmiyecektir (resimdeki mavi kutuyla işaretledim.) 
-EntityFrameWork kütüphanemizi indiriyoruz. *)
+** Burada Dikkat Edilmesi gereken husus İnculude prealase kutucu işaretli olacak yoksa 7.0 sürümü gelmiyecektir (resimdeki mavi kutuyla işaretledim.) 
+EntityFrameWork kütüphanemizi indiriyoruz. **
 ve contex içine  veri tabımıza yansyıacak olan tablo isimlerimizi yazıyoruz. 
 ![Ekran Görüntüsü (236)](https://github.com/user-attachments/assets/14a35586-c43b-4bce-89ef-bb1f16bdbc63)
 - DbSet<T> her bir veritabanı tablosunu temsil eder. Buradaki her DbSet, belirli bir entity (veri modeli) türünü temsil eder ve bu sayede tablodaki verilere erişim sağlanır.
