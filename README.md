@@ -7,7 +7,6 @@ Veritabanı türleri arasında NoSQL (Not Only SQL) terimi, verilerin geleneksel
 
 - Büyük ölçekli web uygulamaları (örneğin, sosyal medya platformları)
 - E-ticaret siteleri ve sağlık verisi yönetimi gibi veri çeşitliliği yüksek uygulamalar
-- IoT uygulamaları, log verisi yönetimi ve gerçek zamanlı analizler
 
 ## MongoDB’nin Temel Özellikleri
 1.Doküman Temelli Yapı
@@ -46,4 +45,46 @@ Format	Metin tabanlı (text-based)	İkili format (binary)
 Veri Türleri	String, number, array, object, boolean, null	Daha fazla veri türü (Date, ObjectId, binary, Decimal128 vb.)
 Depolama	İnsan tarafından okunabilir, daha fazla yer kaplar	Daha kompakt, hızlı işleme ve depolama sağlar
 Performans	Yavaş okuma/yazma (daha büyük veri ile)	Daha hızlı okuma/yazma, daha az bellek kullanımı
-Veri Türü Esnekliği	Kısıtlı türler ve esneklik	Daha fazla esneklik ve veri türü desteği
+Veri Türü Esnekliği	Kısıtlı türler ve esneklik	Daha fazla esneklik ve veri türü desteği 
+
+## MongoDb .Net Core EntityFramework Orm ile kullanılması  
+Benimde bu projecede kullandığım .Net Core Entityframework ile geliştirmiş bulunmaktayım. Mongodbnin .netCore 7.0 altında sürümleri için bu kütüphane bulunmamaktadır o yüzden efcore un nimetlerinden yararlanmak  için projemi 7.0 ile projemi geliştirdim. 
+Yüklediğim MongoDb Kütüphaneleri; 
+1. MongoDB.Driver(2.22.0)
+MongoDB ile etkileşim kurmak ve CRUD işlemlerini gerçekleştirmek için en temel kütüphanedir. Bu kütüphane, MongoDB veritabanlarıyla bağlantı kurmanıza, veri eklemenize, okumanıza, güncellemenize ve silmenize olanak tanır
+2.MongoDB.Bson(2.22.0)
+MongoDB.Bson, MongoDB’nin BSON (Binary JSON) formatını işleyebilmek için kullanılan kütüphanedir. BSON, MongoDB'nin veritabanında kullandığı veri formatıdır ve MongoDB.Driver bu kütüphaneye dayanır.
+3.MongoDB.EntityFrameworkCore(7.0) EfCore nimetlerinden faydalanmak için :)
+Dip Not Önemli=  MongoDb.driver ve Mongodb.Bson kütüphanelerini eklerken last Version Install olarak eklemiştim o yüzden bu iki kütüphaneyi en son sürüm olarak indirmişti  o yüzden Viewsda çalıştırdığımda  hata olarak Unnable to Connect to web server 'https' the web server is no langer running hatasını verdi  sonra  program cs de hata aldım  hatanın çözümü ise MongoDb.Bson(2.22.0) MongoDb.Driver(2.22.0) olarak versiyonlarını güncelledim.
+Projede Repository Desing Patern kullanıldı.
+## - Entity Katmanı (Class Libary)
+ObjectId, MongoDB'nin her bir doküman (document) için otomatik olarak atadığı benzersiz bir kimlik (ID) türüdür. MongoDB'nin varsayılan anahtar olarak kullandığı bu tür, her bir veri kaydının benzersiz bir şekilde tanımlanmasını sağlar. ObjectId, genellikle MongoDB veritabanlarında _id alanı olarak saklanır.
+MongoDb.BSON Kütüphanesi eklendi.
+![Ekran Görüntüsü (235)](https://github.com/user-attachments/assets/d0ce7835-5b9c-4132-9ab9-4f7d8fa8b900)
+Burada Her sınıfımda ObjectId kullanacağı için BaseEntity Sınıfını oluşturdum. ve Diğer sınıflarım BaseEntity sınıfından miras aldı.
+Sınıflarımı bu katmanda yazmış oldum.
+## DataAcsessLayer katmanı (Class Libary) 
+Burada Mongodb Veri tabanımıza bağlantı ayarlarını girmek için gerekli kodları yazacağız . 
+Context klasörü oluşturup içine VillaContext isimli sınıfımızı oluşturuyoruz. 
+Entity katmanımızı DataAcsessLayer Katmanımıza Refans veriyoruz.
+DataAcsess Katmanımıza Manege Nuget Packages'dan MongoDb.EntityFrameWrokCore Kütüphanemizi indiriyoruz.
+![Ekran Görüntüsü (234)](https://github.com/user-attachments/assets/a29dc54c-acc5-4295-b079-defd10e28281)
+Burada Dikkat Edilmesi gereken husus İnculude prealase kutucu işaretli olacak yoksa 7.0 sürümü gelmiyecektir(resimdeki mavi kutuyla işaretledim.) 
+EntityFrameCORE PAKETİMİZİDE indiriyoruz.
+ve contex içine  veri tabımıza yansyıacak olan tablo isimlerimizi yazıyoruz. 
+![Ekran Görüntüsü (236)](https://github.com/user-attachments/assets/14a35586-c43b-4bce-89ef-bb1f16bdbc63)
+- DbSet<T> her bir veritabanı tablosunu temsil eder. Buradaki her DbSet, belirli bir entity (veri modeli) türünü temsil eder ve bu sayede tablodaki verilere erişim sağlanır.
+- Örneğin: public DbSet<Banner> Banners { get; set; } ile Banners tablosuna karşılık gelen Banner türündeki verilere erişim sağlanır.
+
+- OnModelCreating Metodu:Bu metod, model yapılandırması için kullanılır. Yani, veritabanı şemasının nasıl olacağına dair ek ayarlamalar yapılır.
+- Örneğin: modelBuilder.Entity<Banner>().ToCollection("Banners"); komutu, Banner entity'sinin veritabanındaki tablonun adını "Banners" olarak belirler.
+
+## Veri tabanı Ayarı 
+WebUI katmanımızdaki Appsettings.json dosyasına gidelim.  
+
+![Ekran Görüntüsü (237)](https://github.com/user-attachments/assets/c8aa6a43-37cf-4164-a17a-83bb40e1bca5)
+Bağlantı adresimizi ve veritabanımızın ismini verelim. 
+![Ekran Görüntüsü (238)](https://github.com/user-attachments/assets/a62d2102-0aaa-453d-be24-6781d79bae29)
+WEBUI program.cs dosyasına MongoDb nin gerekli configlerini bu şekilde yazıyoruz. 
+
+
