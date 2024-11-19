@@ -47,7 +47,7 @@ Depolama	İnsan tarafından okunabilir, daha fazla yer kaplar	Daha kompakt, hız
 Performans	Yavaş okuma/yazma (daha büyük veri ile)	Daha hızlı okuma/yazma, daha az bellek kullanımı
 Veri Türü Esnekliği	Kısıtlı türler ve esneklik	Daha fazla esneklik ve veri türü desteği 
 
-## MongoDb .Net Core EntityFramework Orm ile kullanılması  
+## - MongoDb .Net Core EntityFramework Orm ile kullanılması  
 Benimde bu projecede kullandığım .Net Core Entityframework ile geliştirmiş bulunmaktayım. Mongodbnin .netCore 7.0 altında sürümleri için bu kütüphane bulunmamaktadır o yüzden efcore un nimetlerinden yararlanmak  için projemi 7.0 ile projemi geliştirdim. 
 Yüklediğim MongoDb Kütüphaneleri; 
 1. MongoDB.Driver(2.22.0)
@@ -63,14 +63,14 @@ MongoDb.BSON Kütüphanesi eklendi.
 ![Ekran Görüntüsü (235)](https://github.com/user-attachments/assets/d0ce7835-5b9c-4132-9ab9-4f7d8fa8b900)
 Burada Her sınıfımda ObjectId kullanacağı için BaseEntity Sınıfını oluşturdum. ve Diğer sınıflarım BaseEntity sınıfından miras aldı.
 Sınıflarımı bu katmanda yazmış oldum.
-## DataAcsessLayer katmanı (Class Libary) 
+## - DataAcsessLayer katmanı (Class Libary) 
 Burada Mongodb Veri tabanımıza bağlantı ayarlarını girmek için gerekli kodları yazacağız . 
 Context klasörü oluşturup içine VillaContext isimli sınıfımızı oluşturuyoruz. 
 Entity katmanımızı DataAcsessLayer Katmanımıza Refans veriyoruz.
 DataAcsess Katmanımıza Manege Nuget Packages'dan MongoDb.EntityFrameWrokCore Kütüphanemizi indiriyoruz.
 ![Ekran Görüntüsü (234)](https://github.com/user-attachments/assets/a29dc54c-acc5-4295-b079-defd10e28281)
-Burada Dikkat Edilmesi gereken husus İnculude prealase kutucu işaretli olacak yoksa 7.0 sürümü gelmiyecektir(resimdeki mavi kutuyla işaretledim.) 
-EntityFrameCORE PAKETİMİZİDE indiriyoruz.
+(* Burada Dikkat Edilmesi gereken husus İnculude prealase kutucu işaretli olacak yoksa 7.0 sürümü gelmiyecektir (resimdeki mavi kutuyla işaretledim.) 
+EntityFrameWork kütüphanemizi indiriyoruz. *)
 ve contex içine  veri tabımıza yansyıacak olan tablo isimlerimizi yazıyoruz. 
 ![Ekran Görüntüsü (236)](https://github.com/user-attachments/assets/14a35586-c43b-4bce-89ef-bb1f16bdbc63)
 - DbSet<T> her bir veritabanı tablosunu temsil eder. Buradaki her DbSet, belirli bir entity (veri modeli) türünü temsil eder ve bu sayede tablodaki verilere erişim sağlanır.
@@ -79,7 +79,7 @@ ve contex içine  veri tabımıza yansyıacak olan tablo isimlerimizi yazıyoruz
 - OnModelCreating Metodu:Bu metod, model yapılandırması için kullanılır. Yani, veritabanı şemasının nasıl olacağına dair ek ayarlamalar yapılır.
 - Örneğin: modelBuilder.Entity<Banner>().ToCollection("Banners"); komutu, Banner entity'sinin veritabanındaki tablonun adını "Banners" olarak belirler.
 
-## Veri tabanı Ayarı 
+## - Veri tabanı Ayarı 
 WebUI katmanımızdaki Appsettings.json dosyasına gidelim.  
 
 ![Ekran Görüntüsü (237)](https://github.com/user-attachments/assets/c8aa6a43-37cf-4164-a17a-83bb40e1bca5)
