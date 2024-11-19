@@ -118,3 +118,5 @@ Kullanım Alanı: Nesneleri kolayca dönüştürmek ve tekrar tekrar yazmaktan k
 
 ## MongoDb 
 ![Ekran Görüntüsü (252)](https://github.com/user-attachments/assets/e52df141-570f-45af-a864-9657dd5ded26)
+
+## MongoDb .Net için kullanım klavuzu : https://www.mongodb.com/resources/languages/how-to-use-mongodb-with-dotnet#introduction-to-mongodb-and-netnet-core- 
