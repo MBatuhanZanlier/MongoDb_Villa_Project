@@ -87,4 +87,34 @@ Bağlantı adresimizi ve veritabanımızın ismini verelim.
 ![Ekran Görüntüsü (238)](https://github.com/user-attachments/assets/a62d2102-0aaa-453d-be24-6781d79bae29)
 WEBUI program.cs dosyasına MongoDb nin gerekli configlerini bu şekilde yazıyoruz. 
 
+############ Villa Project ############ 
+Bu Proje MongoDb veri tabanı kullanılmıştır. .Net CORE 7.0 Kullanıp ORM olarak EntityFrameWrok kullanılmıştır. Bu projenin bir adet Admin proje sayfası olup WebUI kısmını kontrol edebilmektedir. 
 
+## - Kullanılan teknolojiler  
+
+1️⃣ AutoMapper
+🔄 Nesne Dönüşümü (Mapping) 
+Kullanım Alanı: Nesneleri kolayca dönüştürmek ve tekrar tekrar yazmaktan kaçınmak. 
+
+2️⃣ .NET Core 7.0 
+
+3️⃣ ASP.NET Identity
+🔐 Kullanıcı Kimlik Doğrulama & Yetkilendirme
+
+4️⃣ MongoDB
+📚 NoSQL Veritabanı 
+## - Projeye Ait Görseller 
+## Admin Sayfası-Satılık ilanlar Listesi- Silme İşlemi SweetAlert Kullanımı - İlan Detayı 
+![Ekran Görüntüsü (239)](https://github.com/user-attachments/assets/69810a6f-6e97-4a7b-8d3a-603a7b1eab2a)
+![Ekran Görüntüsü (241)](https://github.com/user-attachments/assets/bd6b9f96-f764-46a0-acec-e99f8aaffd1d)
+![Ekran Görüntüsü (243)](https://github.com/user-attachments/assets/94cd6b48-2a04-4b71-b621-ce0afb92c51d) 
+-WEB UI Sayfası Görseller 
+![Ekran Görüntüsü (245)](https://github.com/user-attachments/assets/2334765c-133b-4ab2-8e18-2044bfa73df1)
+![Ekran Görüntüsü (246)](https://github.com/user-attachments/assets/106e8a7b-3766-4da8-b1d9-c5d5afe586cc)
+![Ekran Görüntüsü (247)](https://github.com/user-attachments/assets/19d2d337-6dfb-48e2-ab8b-d593a257f7da)
+![Ekran Görüntüsü (248)](https://github.com/user-attachments/assets/ffbfdea0-0de2-464b-8729-8988e213e173)
+![Ekran Görüntüsü (249)](https://github.com/user-attachments/assets/fa24a724-4de1-4bef-8234-d3ca1b5366c5)
+![Ekran Görüntüsü (250)](https://github.com/user-attachments/assets/394f6921-46e6-4c24-b036-549ff056a113)
+
+## MongoDb 
+![Ekran Görüntüsü (252)](https://github.com/user-attachments/assets/e52df141-570f-45af-a864-9657dd5ded26)
