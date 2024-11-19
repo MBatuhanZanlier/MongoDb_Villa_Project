@@ -52,9 +52,9 @@ Veri Türü Esnekliği	Kısıtlı türler ve esneklik	Daha fazla esneklik ve ver
 Yüklediğim MongoDb Kütüphaneleri; 
 1. MongoDB.Driver(2.22.0)
 - MongoDB ile etkileşim kurmak ve CRUD işlemlerini gerçekleştirmek için en temel kütüphanedir. Bu kütüphane, MongoDB veritabanlarıyla bağlantı kurmanıza, veri eklemenize, okumanıza, güncellemenize ve silmenize olanak tanır
-2.MongoDB.Bson(2.22.0)
+2. MongoDB.Bson(2.22.0)
 - MongoDB.Bson, MongoDB’nin BSON (Binary JSON) formatını işleyebilmek için kullanılan kütüphanedir. BSON, MongoDB'nin veritabanında kullandığı veri formatıdır ve MongoDB.Driver bu kütüphaneye dayanır.
-3.MongoDB.EntityFrameworkCore(7.0) EfCore nimetlerinden faydalanmak için :)
+3. MongoDB.EntityFrameworkCore(7.0) EfCore nimetlerinden faydalanmak için :)
 - ** Dip Not Önemli=  MongoDb.driver ve Mongodb.Bson kütüphanelerini eklerken last Version Install olarak eklemiştim o yüzden bu iki kütüphaneyi en son sürüm olarak indirmişti  o yüzden Viewsda çalıştırdığımda  hata olarak Unnable to Connect to web server 'https' the web server is no langer running hatasını verdi  sonra  program cs de hata aldım  hatanın çözümü ise MongoDb.Bson(2.22.0) MongoDb.Driver(2.22.0) olarak versiyonlarını güncelledim. **
 ## Projede Repository Desing Patern kullanıldı.
 ## - Entity Katmanı (Class Libary)
